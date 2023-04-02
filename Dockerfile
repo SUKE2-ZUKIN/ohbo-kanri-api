@@ -7,6 +7,8 @@ RUN apt-get update -qq && apt-get install -y build-essential nodejs vim
 # docker build時に--build-arg <変数名>=<値>フラグを定義するもの
 ARG WORKDIR
 ENV WORKDIR $WORKDIR
+ENV LANG C.UTF-8
+ENV TZ Asia/Tokyo
 
 # 作業ディレクトリを作成 & 指定
 RUN mkdir ${WORKDIR}
